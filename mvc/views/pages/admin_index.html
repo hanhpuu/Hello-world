@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+    <body>
+        <div>
+            <h3>Pages</h3><br/>
+            <table class='table table-striped' style="width: 400px;">
+                <?php
+                foreach($data['pages'] as $page_data) { ?>
+                <tr>
+                    <td><b> <?php echo $page_data['title'] ?> </b></td>
+                    <td align='rightS'>
+                        <a href="/admin/pages/edit/<?= $page_data['id'] ?>"> <button class='btn btn-sm btn-primary'>edit</button></a>
+                        
+                        <a href="/admin/pages/delete/<?= $page_data['id'] ?>" onclick="return confirmDelete();"> <button class='btn btn-sm btn-warning'>delete</button></a>
+                    </td>
+                </tr>
+                <?php } ?>            
+            </table>    
+        </div>
+        <div>
+            <a href="/admin/pages/add/"> <button class='btn btn-sm btn-success'>New page</button></a>
+        </div>
+    </body>
+
+</html>
